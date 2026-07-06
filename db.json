@@ -1,0 +1,75 @@
+{
+  "products": [],
+  "orders": [],
+  "apiStatus": [
+    {
+      "id": "bling",
+      "name": "Bling ERP",
+      "status": "active",
+      "latency": 124,
+      "uptime": 99.8,
+      "token_expires": "2026-08-15T23:59:59",
+      "requests_today": 1420,
+      "requests_limit": 10000
+    },
+    {
+      "id": "mercadolivre",
+      "name": "Mercado Livre API",
+      "status": "active",
+      "latency": 185,
+      "uptime": 99.9,
+      "token_expires": "2026-07-12T14:22:00",
+      "requests_today": 3240,
+      "requests_limit": 20000
+    },
+    {
+      "id": "shopee",
+      "name": "Shopee API v2",
+      "status": "active",
+      "latency": 290,
+      "uptime": 99.5,
+      "token_expires": "2026-09-01T12:00:00",
+      "requests_today": 850,
+      "requests_limit": 5000
+    }
+  ],
+  "logs": [
+    {
+      "id": "log-sync-1783352316046",
+      "timestamp": "2026-07-06T15:38:36.046Z",
+      "source": "Sistema",
+      "type": "success",
+      "message": "Sincronização global de produção concluída",
+      "details": "Bling ERP: Token de acesso ausente nas configurações. | Mercado Livre: Access Token ausente nas configurações.",
+      "payload": "{\n  \"bling_items_fetched\": 0,\n  \"ml_items_fetched\": 0,\n  \"orders_imported\": 0,\n  \"latency\": {\n    \"bling\": 120,\n    \"mercadolivre\": 170,\n    \"shopee\": 250\n  },\n  \"logs\": [\n    \"Bling ERP: Token de acesso ausente nas configurações.\",\n    \"Mercado Livre: Access Token ausente nas configurações.\"\n  ]\n}"
+    },
+    {
+      "id": "log-sync-1783352315160",
+      "timestamp": "2026-07-06T15:38:35.160Z",
+      "source": "Sistema",
+      "type": "success",
+      "message": "Sincronização global de produção concluída",
+      "details": "Bling ERP: Token de acesso ausente nas configurações. | Mercado Livre: Access Token ausente nas configurações.",
+      "payload": "{\n  \"bling_items_fetched\": 0,\n  \"ml_items_fetched\": 0,\n  \"orders_imported\": 0,\n  \"latency\": {\n    \"bling\": 120,\n    \"mercadolivre\": 170,\n    \"shopee\": 250\n  },\n  \"logs\": [\n    \"Bling ERP: Token de acesso ausente nas configurações.\",\n    \"Mercado Livre: Access Token ausente nas configurações.\"\n  ]\n}"
+    },
+    {
+      "id": "log-system-1783352267224",
+      "timestamp": "2026-07-06T15:37:47.224Z",
+      "source": "SISTEMA",
+      "type": "info",
+      "message": "Aplicativo inicializado em modo de API real. Configure suas credenciais na aba Ajustes.",
+      "details": null
+    }
+  ],
+  "finances": [],
+  "config": {
+    "bling_token": "",
+    "ml_client_id": "",
+    "ml_client_secret": "",
+    "ml_access_token": "",
+    "shopee_partner_id": "",
+    "shopee_partner_key": "",
+    "shopee_shop_id": "",
+    "shopee_access_token": ""
+  }
+}
