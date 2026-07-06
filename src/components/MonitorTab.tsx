@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Activity, ShieldCheck, Wifi, CloudLightning, RefreshCw, ServerOff, Clock } from 'lucide-react';
+import { Activity, ShieldCheck, RefreshCw, ServerOff, Clock } from 'lucide-react';
 import { APIStatus } from '../types';
 
 interface MonitorTabProps {

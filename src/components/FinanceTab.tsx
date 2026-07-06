@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { DollarSign, Percent, TrendingUp, TrendingDown, ArrowUpRight, ArrowDownRight, Plus, Circle as HelpCircle, Eye, EyeOff } from 'lucide-react';
+import { Percent, ArrowUpRight, ArrowDownRight, Plus, Eye, EyeOff } from 'lucide-react';
 import { FinancialTransaction } from '../types';
 
 interface FinanceTabProps {

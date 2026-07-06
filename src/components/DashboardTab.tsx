@@ -1,4 +1,4 @@
-import { TriangleAlert as AlertTriangle, TrendingUp, ShoppingBag, CircleCheck as CheckCircle2, ShieldAlert, ArrowRight, Ban, Zap } from 'lucide-react';
+import { TriangleAlert as AlertTriangle, ShoppingBag, CircleCheck as CheckCircle2, ShieldAlert, ArrowRight, Ban, Zap } from 'lucide-react';
 import { Product, Order, LogEntry } from '../types';
 
 interface DashboardTabProps {

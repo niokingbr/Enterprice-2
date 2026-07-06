@@ -1,15 +1,26 @@
 {
   "products": [],
-  "orders": [],
+  "orders": [
+    {
+      "id": "order-1",
+      "marketplace": "mercadolivre",
+      "customer": "Joao Silva",
+      "status": "paid",
+      "date": "2026-07-06T10:00:00",
+      "total": 199.9,
+      "items_count": 2,
+      "tracking_code": null
+    }
+  ],
   "apiStatus": [
     {
       "id": "bling",
       "name": "Bling ERP",
-      "status": "active",
-      "latency": 124,
+      "status": "error",
+      "latency": 999,
       "uptime": 99.8,
       "token_expires": "2026-08-15T23:59:59",
-      "requests_today": 1420,
+      "requests_today": 1,
       "requests_limit": 10000
     },
     {
@@ -19,7 +30,7 @@
       "latency": 185,
       "uptime": 99.9,
       "token_expires": "2026-07-12T14:22:00",
-      "requests_today": 3240,
+      "requests_today": 1,
       "requests_limit": 20000
     },
     {
@@ -29,41 +40,79 @@
       "latency": 290,
       "uptime": 99.5,
       "token_expires": "2026-09-01T12:00:00",
-      "requests_today": 850,
+      "requests_today": 1,
       "requests_limit": 5000
     }
   ],
   "logs": [
     {
-      "id": "log-sync-1783352316046",
-      "timestamp": "2026-07-06T15:38:36.046Z",
+      "id": "log-sync-1783353483116",
+      "timestamp": "2026-07-06T15:58:03.116Z",
       "source": "Sistema",
-      "type": "success",
+      "type": "warning",
       "message": "Sincronização global de produção concluída",
-      "details": "Bling ERP: Token de acesso ausente nas configurações. | Mercado Livre: Access Token ausente nas configurações.",
-      "payload": "{\n  \"bling_items_fetched\": 0,\n  \"ml_items_fetched\": 0,\n  \"orders_imported\": 0,\n  \"latency\": {\n    \"bling\": 120,\n    \"mercadolivre\": 170,\n    \"shopee\": 250\n  },\n  \"logs\": [\n    \"Bling ERP: Token de acesso ausente nas configurações.\",\n    \"Mercado Livre: Access Token ausente nas configurações.\"\n  ]\n}"
+      "details": "Falha na API do Bling ERP: Bling API Error [401]: {\"error\":{\"type\":\"invalid_token\",\"message\":\"invalid_token\",\"description\":\"The access token provided is invalid or expired\"}}\n | Mercado Livre: Access Token ausente nas configurações.",
+      "payload": "{\n  \"bling_items_fetched\": 0,\n  \"ml_items_fetched\": 0,\n  \"orders_imported\": 0,\n  \"latency\": {\n    \"bling\": 120,\n    \"mercadolivre\": 170,\n    \"shopee\": 250\n  },\n  \"logs\": [\n    \"Falha na API do Bling ERP: Bling API Error [401]: {\\\"error\\\":{\\\"type\\\":\\\"invalid_token\\\",\\\"message\\\":\\\"invalid_token\\\",\\\"description\\\":\\\"The access token provided is invalid or expired\\\"}}\\n\",\n    \"Mercado Livre: Access Token ausente nas configurações.\"\n  ]\n}"
     },
     {
-      "id": "log-sync-1783352315160",
-      "timestamp": "2026-07-06T15:38:35.160Z",
+      "id": "log-fin-1783353482048",
+      "timestamp": "2026-07-06T15:58:02.048Z",
       "source": "Sistema",
       "type": "success",
-      "message": "Sincronização global de produção concluída",
-      "details": "Bling ERP: Token de acesso ausente nas configurações. | Mercado Livre: Access Token ausente nas configurações.",
-      "payload": "{\n  \"bling_items_fetched\": 0,\n  \"ml_items_fetched\": 0,\n  \"orders_imported\": 0,\n  \"latency\": {\n    \"bling\": 120,\n    \"mercadolivre\": 170,\n    \"shopee\": 250\n  },\n  \"logs\": [\n    \"Bling ERP: Token de acesso ausente nas configurações.\",\n    \"Mercado Livre: Access Token ausente nas configurações.\"\n  ]\n}"
+      "message": "Lançamento financeiro adicionado",
+      "details": "Nova transação do tipo [RECEITA] na categoria 'Vendas' no valor de R$ 250.50.",
+      "payload": "{\n  \"id\": \"tx-user-1783353482048\",\n  \"date\": \"2026-07-06\",\n  \"type\": \"income\",\n  \"category\": \"Vendas\",\n  \"description\": \"Venda Comprovada\",\n  \"amount\": 250.5,\n  \"marketplace\": \"mercadolivre\"\n}"
     },
     {
-      "id": "log-system-1783352267224",
-      "timestamp": "2026-07-06T15:37:47.224Z",
-      "source": "SISTEMA",
+      "id": "log-bulk-1783353480564",
+      "timestamp": "2026-07-06T15:58:00.564Z",
+      "source": "Sistema",
+      "type": "success",
+      "message": "Correção em lote efetuada para 1 produtos",
+      "details": "Direção da correção: Atualizar canais ativos. SKUs afetados: TEST-SKU-001",
+      "payload": "{\n  \"productIds\": [\n    \"prod-test-1\"\n  ],\n  \"affectedSkus\": [\n    \"TEST-SKU-001\"\n  ],\n  \"total_corrected\": 1\n}"
+    },
+    {
+      "id": "log-1783353479465",
+      "timestamp": "2026-07-06T15:57:59.465Z",
+      "source": "Bling",
+      "type": "success",
+      "message": "Estoque corrigido no Bling ERP para SKU TEST-SKU-001",
+      "details": "Estoque sincronizado do canal Mercado Livre. Saldo alterado de 10 para 5 un.",
+      "payload": "{\n  \"productId\": \"prod-test-1\",\n  \"action\": \"bling\",\n  \"canal\": \"mercadolivre\",\n  \"product_state\": {\n    \"id\": \"prod-test-1\",\n    \"sku\": \"TEST-SKU-001\",\n    \"name\": \"Produto Teste Reconciliacao\",\n    \"bling_stock\": 5,\n    \"ml_stock\": 5,\n    \"shopee_stock\": null,\n    \"ml_status\": \"active\",\n    \"shopee_status\": null,\n    \"price\": 99.9,\n    \"has_photo\": true,\n    \"has_description\": true,\n    \"has_video\": false,\n    \"title_valid\": true,\n    \"attributes_complete\": true,\n    \"image_url\": \"https://example.com/image.jpg\",\n    \"ignored_alert\": false\n  }\n}"
+    },
+    {
+      "id": "log-system-1783353474734",
+      "timestamp": "2026-07-06T15:57:54.734Z",
+      "source": "Sistema",
       "type": "info",
-      "message": "Aplicativo inicializado em modo de API real. Configure suas credenciais na aba Ajustes.",
-      "details": null
+      "message": "Configurações atualizadas de conexão.",
+      "details": "Chaves de API atualizadas. Conectividade direta em tempo real ativada.",
+      "payload": "{\n  \"bling_token\": \"PROVEN_TOKEN_123\",\n  \"ml_client_id\": \"\",\n  \"ml_client_secret\": \"\",\n  \"ml_access_token\": \"\",\n  \"shopee_partner_id\": \"\",\n  \"shopee_partner_key\": \"\",\n  \"shopee_shop_id\": \"\",\n  \"shopee_access_token\": \"\"\n}"
     }
   ],
-  "finances": [],
+  "finances": [
+    {
+      "id": "tx-user-1783353482048",
+      "date": "2026-07-06",
+      "type": "income",
+      "category": "Vendas",
+      "description": "Venda Comprovada",
+      "amount": 250.5,
+      "marketplace": "mercadolivre"
+    },
+    {
+      "id": "tx-1",
+      "date": "2026-07-06",
+      "type": "income",
+      "category": "Vendas",
+      "description": "Venda Mercado Livre",
+      "amount": 199.9,
+      "marketplace": "mercadolivre"
+    }
+  ],
   "config": {
-    "bling_token": "",
+    "bling_token": "PROVEN_TOKEN_123",
     "ml_client_id": "",
     "ml_client_secret": "",
     "ml_access_token": "",

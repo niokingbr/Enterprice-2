@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, ShieldCheck, CircleCheck as CheckCircle2, Circle as XCircle, TriangleAlert as AlertTriangle, Circle as HelpCircle, ArrowRight, Star } from 'lucide-react';
+import { Search, CircleCheck as CheckCircle2, Circle as XCircle, TriangleAlert as AlertTriangle } from 'lucide-react';
 import { Product } from '../types';
 
 interface QualityTabProps {
