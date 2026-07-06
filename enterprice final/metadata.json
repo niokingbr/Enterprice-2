@@ -1,0 +1,6 @@
+{
+  "name": "CID Enterprise",
+  "description": "Centro de Inteligência Operacional - Conciliação e Auditoria para Bling ERP, Mercado Livre e Shopee",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
